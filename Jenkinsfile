@@ -4,21 +4,14 @@ pipeline {
 
         stage('testing pipeline'){
 		steps{
-			sh 'pwd'
-			step{
-				if (exists) {
-    					sh "LINUX SHELL COMMAND"
-				} 
-			     else {
-    					echo "File doesn't exist"
-				}
-			}
-
-               // sh 'mkdir from-jenkins'
-               // sh 'touch from-jenkins/test.txt'
-        }
+			missfunc()
+		}
 
 }
 }
 }
-def exists = fileExists '/root/elp/test.php'
+//def exists = fileExists "/from-jenkins/test.txt"
+
+void missfunc(){
+	sh "ls -l"
+}
