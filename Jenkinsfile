@@ -4,7 +4,10 @@ pipeline {
 
         stage('testing pipeline'){
           steps{
-		def controlFile = "/from-jenkins/test.txt"
+		  step{
+			  def controlFile = "/from-jenkins/test.txt"
+		  }
+		step{
 		sh 'pwd'
 		    echo 'test1'
 		  if (fileExists(controlFile)){
@@ -14,6 +17,8 @@ pipeline {
 			  echo "${controlFile} is missing. Sai can mount this file"
 			  sh "mount /from-jenkins/test.txt/"
 			  echo "continue amma"
+		  }
+			  
 		  }
                // sh 'mkdir from-jenkins'
                // sh 'touch from-jenkins/test.txt'
