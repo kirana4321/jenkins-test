@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
 
-        stage('testing pipeline'){
+        stage(){
 		steps{
 			script {
 		missfunc()
