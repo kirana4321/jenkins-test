@@ -21,3 +21,4 @@ pipeline {
 
 void missfunc(){
 	sh "ls -l"
+}
