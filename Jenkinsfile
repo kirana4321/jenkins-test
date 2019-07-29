@@ -7,7 +7,7 @@ pipeline {
 			script {
 		missfunc()
 		sh "pwd"
-                def folder = fileExists '/from-jenkins/test.txt'
+                def folder = fileExists 'from-jenkins/test.txt'
                     if( folder) {
                         echo "Yes"
                     } else {
