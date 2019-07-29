@@ -15,10 +15,6 @@ pipeline {
 			  sh "mount /from-jenkins/test.txt/"
 			  echo "continue amma"
 		  }
-		  else{
-			  error:"${controlFile} still missing. Will now fail the job"
-		  }
-		  
                // sh 'mkdir from-jenkins'
                // sh 'touch from-jenkins/test.txt'
                 }
