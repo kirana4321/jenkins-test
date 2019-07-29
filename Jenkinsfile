@@ -4,9 +4,9 @@ pipeline {
 
         stage('testing pipeline'){
           steps{
+		def controlFile = "/from-jenkins/test.txt"
 		sh 'pwd'
 		    echo 'test1'
-		 def controlFile = "/from-jenkins/test.txt"
 		  if (fileExists(controlFile)){
 			  echo '${controlFile} exists.'
 		  }
