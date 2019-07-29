@@ -5,8 +5,14 @@ pipeline {
         stage('testing pipeline'){
 		steps{
 			sh 'pwd'
-		    	sh "fileExists(/from-jenkins/test.txt)"
-
+			step{
+				if (exists) {
+    					sh "LINUX SHELL COMMAND"
+				} 
+			     else {
+    					echo "File doesn't exist"
+				}
+			}
 
                // sh 'mkdir from-jenkins'
                // sh 'touch from-jenkins/test.txt'
@@ -15,3 +21,4 @@ pipeline {
 }
 }
 }
+def exists = fileExists '/root/elp/test.php'
