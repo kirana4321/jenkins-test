@@ -4,7 +4,14 @@ pipeline {
 
         stage('testing pipeline'){
 		steps{
-			missfunc()
+			script {
+                def folder = fileExists '/from-jenkins/test.txt'
+                    if( folder) {
+                        echo "Yes"
+                    } else {
+                        echo "File doesn't exist" 
+                    }
+        		}
 		}
 
 }
@@ -14,4 +21,3 @@ pipeline {
 
 void missfunc(){
 	sh "ls -l"
-}
