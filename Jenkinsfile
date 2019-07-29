@@ -2,19 +2,9 @@ pipeline {
     agent any
     stages {
 
-        stage{
-		steps{
-			script {
-		missfunc()
+        stage("Test"){
 		sh "pwd"
-                def folder = fileExists 'from-jenkins/test.txt'
-                    if( folder) {
-                        echo "Yes"
-                    } else {
-                        echo "File doesn't exist" 
-                    }
-        		}
-		}
+		sh "ls -l"
 
 }
 }
