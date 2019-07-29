@@ -5,6 +5,8 @@ pipeline {
         stage('testing pipeline'){
 		steps{
 			script {
+		missfunc()
+		sh "pwd"
                 def folder = fileExists '/from-jenkins/test.txt'
                     if( folder) {
                         echo "Yes"
